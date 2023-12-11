@@ -8,11 +8,10 @@ const sum = (a: number, b: number) => {
 sum(1, myAge);
 
 class Persona {
-
   age;
   name;
 
-  constructor(age: number, name: string) { }
+  constructor(age: number, name: string) {}
 
   getSummary() {
     return `my name is ${this.name} and my age is ${this.age}`;
