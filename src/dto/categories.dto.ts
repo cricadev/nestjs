@@ -12,3 +12,10 @@ export class CreateCategoryDto {
   @IsNotEmpty()
   readonly name: string;
 }
+
+export class UpdateCategoryDto {
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly name: string;
+}

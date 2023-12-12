@@ -1,10 +1,19 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import {} from "/../dto/categories.dto"
+import { CategoriesService } from './../services/categories.service';
 @Controller('categories')
 export class CategoriesController {
-  @Get('/categories/:id/products/:productId')
-  getCategoru(@Param() { id, productId }) {
-    return 'product ' + productId + ' and category ' + id;
+  constructor(private categoriesService: CategoriesService) {}
+
+  @Get()
+  getCategories() {
+    return this.categoriesService.findAll();
+  }
+
+  @Get('/:id/products/:productId')
+  getCategory(@Param() { id, productId }) {
+    return {
+      message: `Category ${id} Product ${productId}`,
+    };
   }
   @Post()
   create(@Body() payload: any) {
