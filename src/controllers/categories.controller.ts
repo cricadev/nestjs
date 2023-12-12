@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-
+import {} from "/../dto/categories.dto"
 @Controller('categories')
 export class CategoriesController {
   @Get('/categories/:id/products/:productId')
